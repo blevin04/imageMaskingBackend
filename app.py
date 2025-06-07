@@ -4,9 +4,9 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 from ultralytics import YOLO
-
+model = YOLO("yolov8n-seg.pt")
 app = Flask(__name__)
-model = YOLO("yolov8n-seg.pt")  # or yolov8m-seg.pt for better results
+ # or yolov8m-seg.pt for better results
 
 def blur_car(image_np):
     results = model.predict(image_np, save=False, imgsz=640)
