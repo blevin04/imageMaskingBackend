@@ -52,4 +52,5 @@ def process_image():
     return send_file(BytesIO(buffer.tobytes()), mimetype='image/jpeg')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+      # Do NOT include app.run() — gunicorn handles it in Render
+
